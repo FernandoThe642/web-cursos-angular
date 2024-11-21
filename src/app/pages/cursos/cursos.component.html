@@ -1,20 +1,15 @@
+<h2>Lista de Cursos</h2>
+
 <div class="contenedor-cursos">
-    <h2>Lista de Cursos</h2>
-    <ul id="lista-cursos">
-      <li *ngFor="let curso of cursos">
-        <div class="informacion-curso">
-        <h2>{{ curso.nombreCurso }}</h2>
-        </div>
-        <div>
-          <p><strong>Instructor:</strong> {{ curso.nombreInstructor }}</p>
-          <button (click)="mostrarDetalles(curso)">Ver más</button>
-          <button (click)="eliminarCurso(curso.id)">Eliminar</button>
-        </div>
+    <div *ngFor="let curso of cursos" class="curso">
+        <h3>{{ curso.nombreCurso }}</h3>
+        <p><strong>Instructor:</strong> {{ curso.nombreInstructor }}</p>
+        <button (click)="mostrarDetalles(curso)">Ver más</button>
+        <button (click)="eliminarCurso(curso.id)">Eliminar</button>
         <div *ngIf="curso.mostrarDetalles" class="detalles-curso">
-          <p><strong>Fecha de inicio:</strong> {{ curso.fechaInicio }}</p>
-          <p><strong>Duración:</strong> {{ curso.duracion }} semanas</p>
-          <p><strong>Descripción:</strong> {{ curso.descripcion }}</p>
-        </div>
-      </li>
-    </ul>
-  </div>
+            <p><strong>Fecha de inicio:</strong> {{ curso.fechaInicio }}</p>
+            <p><strong>Duración:</strong> {{ curso.duracion }} semanas</p>
+            <p><strong>Descripción:</strong> {{ curso.descripcion }}</p>
+        </div>  
+    </div>
+</div>

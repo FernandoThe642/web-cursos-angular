@@ -50,7 +50,7 @@ export class AgregarCursoComponent {
     localStorage.setItem('cursos', JSON.stringify(cursos));
   }
 
-  // Reiniciar el formulario
+  
   reiniciarFormulario() {
     this.nombreCurso = '';
     this.nombreInstructor = '';
