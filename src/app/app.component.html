@@ -7,9 +7,10 @@
 </head>
 <body>
   <header>
-    <h1>Prueba de Simulación</h1>
-
+    <img type="image/webp" src="./assets/logo.webp" alt="Logo de la página">
+    <h1>Cursos Web</h1>
   </header>
+
   <nav>
     <a [routerLink]="['/pages/home']">Inicio</a>
     <a [routerLink]="['/pages/cursos']">Cursos</a>
@@ -17,7 +18,13 @@
     <a [routerLink]="['/pages/contacto']">Contacto</a>
   </nav>
 
+<div class="componente" >
   <router-outlet/>
-  
+</div>
+
+<footer>
+  <p>© 2024 Fernando Sánchez</p>
+</footer>  
 </body>
+
 </html>

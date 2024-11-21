@@ -1,1 +1,23 @@
-<p>agregar-curso works!</p>
+<h2>Agregar Curso</h2>
+<div class="formulario-contenedor">
+    <form (ngSubmit)="agregarCurso()">
+    <fieldset>
+        <label for="nombre-curso">Nombre del curso:</label>
+        <input type="text" [(ngModel)]="nombreCurso" name="nombreCurso" required>
+        <br>
+        <label for="nombre-instructor">Nombre del instructor:</label>
+        <input type="text" [(ngModel)]="nombreInstructor" name="nombreInstructor" required>
+        <br>
+        <label for="fecha-inicio">Fecha de inicio:</label>
+        <input type="date" [(ngModel)]="fechaInicio" name="fechaInicio" required>
+        <br>
+        <label for="duracion">Duración (semanas):</label>
+        <input type="number" [(ngModel)]="duracion" name="duracion" min="1" required>
+        <br>
+        <label for="descripcion">Descripción:</label>
+        <textarea [(ngModel)]="descripcion" name="descripcion" required></textarea>
+        <button type="submit">Agregar Curso</button>
+    </fieldset>
+        <div style="color: red;" *ngIf="mostrarErrores" class="error">Complete todos los campos.</div>
+    </form>
+</div>
