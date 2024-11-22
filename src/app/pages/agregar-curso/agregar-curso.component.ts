@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { CursosService } from '../../services/cursos.service';
 
 @Component({
   selector: 'app-agregar-curso',
@@ -18,6 +19,8 @@ export class AgregarCursoComponent {
   descripcion: string = '';
   mostrarErrores: boolean = false;
 
+  constructor(private cursosService: CursosService) {  }
+
   agregarCurso() {
     if (this.validarFormulario()) {
       const curso = {
@@ -29,7 +32,7 @@ export class AgregarCursoComponent {
         descripcion: this.descripcion
       };
 
-      this.guardarCurso(curso)
+      this.cursosService.guardarCurso(curso)
       this.reiniciarFormulario()
       this.mostrarErrores = false
     } else {
@@ -44,13 +47,7 @@ export class AgregarCursoComponent {
   }
 
 
-  guardarCurso(curso: any) {
-    let cursos = JSON.parse(localStorage.getItem('cursos') || '[]');
-    cursos.push(curso);
-    localStorage.setItem('cursos', JSON.stringify(cursos));
-  }
 
-  
   reiniciarFormulario() {
     this.nombreCurso = '';
     this.nombreInstructor = '';

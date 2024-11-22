@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { CursosService } from '../../services/cursos.service';
 
 @Component({
   selector: 'app-cursos',
@@ -11,21 +12,22 @@ import { Component } from '@angular/core';
 export class CursosComponent {
   
   cursos: any[] = [];
+  
+
+  constructor(private cursosService: CursosService) {
+  }
 
   ngOnInit() {
-    this.cargarCursos();
+    this.obtenerCursos()
+  }
+  obtenerCursos() {
+    this.cursos = this.cursosService.cargarCursos()
   }
 
-  
-  cargarCursos() {
-    const cursosGuardados = JSON.parse(localStorage.getItem('cursos') || '[]');
-    this.cursos = cursosGuardados;
-  }
-
-  
+    
   eliminarCurso(id: number) {
-    this.cursos = this.cursos.filter(curso => curso.id !== id);
-    localStorage.setItem('cursos', JSON.stringify(this.cursos));
+    this.cursosService.eliminarCurso(id)
+    this.obtenerCursos()
   }
 
   

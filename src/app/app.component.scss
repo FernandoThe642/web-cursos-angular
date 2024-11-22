@@ -28,6 +28,12 @@ nav a:hover {
     background-color: #555;
 }
 
+.componente {
+    display: flex;
+    flex-direction: column;
+    min-height: 70vh; 
+}
+
 footer {
     background-color: #333;
     color: #fff;
@@ -35,6 +41,5 @@ footer {
     position: flex;
     padding: 10px 0;
     bottom: 0;
-    min-height: 10vh; 
     width: 100%;
 }
