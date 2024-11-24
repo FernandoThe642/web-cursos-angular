@@ -11,7 +11,7 @@ import { CursosService } from '../../services/cursos.service';
 })
 export class CursosComponent {
   
-  cursos: any[] = [];
+  cursos: any[] = []
   
 
   constructor(private cursosService: CursosService) {
@@ -32,7 +32,7 @@ export class CursosComponent {
 
   
   mostrarDetalles(curso: any) {
-    curso.mostrarDetalles = !curso.mostrarDetalles;
+    curso.mostrarDetalles = !curso.mostrarDetalles
   }
 
 }

@@ -20,7 +20,8 @@
             <textarea [(ngModel)]="descripcion" name="descripcion" required ></textarea>
             <button type="submit">Agregar Curso</button>
         </fieldset>
-            <div style="color: red;" *ngIf="mostrarErrores" class="error">Complete todos los campos.</div>
+            <div style="color: red;" *ngIf="error" >Complete todos los campos.</div>
+            <div style="color: green;" *ngIf="exito">Curso agregado</div>
         </form>
     </div>
 </div>

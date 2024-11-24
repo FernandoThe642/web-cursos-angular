@@ -3,7 +3,10 @@
 <div class="contenedor-cursos">
     <div *ngFor="let curso of cursos" class="curso">
         <h3>{{ curso.nombreCurso }}</h3>
-        <p><strong>Instructor:</strong> {{ curso.nombreInstructor }}</p>
+        <img src="{{curso.fotoCurso}}" alt="{{ curso.nombreCurso }}" class="imagen-curso">
+        <div class="instructor">
+            <p><strong>Instructor:</strong> {{ curso.nombreInstructor }}</p>
+        </div>
         <button (click)="mostrarDetalles(curso)">Ver más</button>
         <button (click)="eliminarCurso(curso.id)">Eliminar</button>
         <div *ngIf="curso.mostrarDetalles" class="detalles-curso">
@@ -13,3 +16,4 @@
         </div>  
     </div>
 </div>
+
